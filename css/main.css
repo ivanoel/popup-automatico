@@ -1,0 +1,184 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'New Tegomin', serif;;
+}
+/* Corpo */
+body {
+    min-height: 100vh;
+    background: #5a6777;
+}
+/* popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.contentBox {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 5px 15px rgba(114, 62, 59, 0.1);
+}
+.contentBox .imgBox {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentBox .imgBox::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: #cce2c5;
+    border-radius: 50%;   
+}
+.contentBox .imgBox img {
+    position: relative;
+    max-width: 250px;
+    z-index: 1000;
+}
+.contentBox .content {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentBox .content h3 {
+    color: rgb(71, 64, 64);
+    line-height: 1em;
+    font-weight: 900;
+    font-size: 2.2em;
+    text-transform: uppercase;
+}
+.contentBox .content p {
+    font-weight: 300;
+}
+.contentBox .content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4d54;
+    color: #fff;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: url(./../images/cancel.png); no-repeat;
+    background-size: 40px;
+    background-position: center;
+    cursor: pointer;
+    z-index: 10;
+}
+/* responsividade */
+@media (max-width : 667px) {
+    .contentBox {
+        width: 300px;
+        height: auto;
+        flex-direction: column;
+    }
+    .contentBox .imgBox {
+        height: 200px;
+        transform: translateY(-50px);
+    }
+    .contentBox .imgBox::before {
+        background: #fff;
+    }
+    .contentBox .content {
+        height: auto;
+        text-align: center;
+        padding: 20px;
+        padding-top: 0;
+    }
+    .fechar {
+        top: -50px;
+        right: -10px;
+        background: url(./../images/cancel.png); no-repeat;
+        background-size: 40px;
+        background-position: center;
+    }
+}
+/* Footer */
+ul.icons li {
+  display: inline-block;
+  padding: 0 1em 0 0;
+}
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+}
+.icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+.icon > .label {
+  display: none;
+}
+.icon.style2 {
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 100%;
+  display: inline-block;
+  padding: 0.5em;
+  border: solid 2px rgba(252, 252, 252, 0.25);
+  background-color: rgba(255, 250, 250, 0.75);
+}
+.icon.style2:before {
+  display: block;
+  width: 1.25em;
+  height: 1.25em;
+  line-height: 1.25em;
+  font-size: 1.35em;
+}
+.icon.style2:hover {
+  background-color: rgba(114, 62, 59, 0.5);
+  color: #fff;
+}
+
+@media screen and (max-width: 736px) {
+  .icon.style2:before {
+    font-size: 1em;
+  }
+}
+#footer {
+    position: relative;
+    top: 510px;
+    text-align: center;
+    padding: 4em 0 4em 0;
+    color: #fff;
+}
+@media screen and (max-width: 736px) {
+    #footer {
+        position: relative;
+        top: 600px;
+        padding: 2em 0 2em 0;
+    }
+    p {
+        font-size: 15px;
+        text-align: center;
+    }
+}
